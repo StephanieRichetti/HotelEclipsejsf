@@ -1,0 +1,219 @@
+
+.page-header {
+	width: 100%;	
+	background-color: black;
+}
+
+.header {
+	text-align: left;
+	width: 90%;
+	margin-left: 35%;
+	
+} 
+
+.header small {
+	color: white;
+}
+
+.corpo{
+	margin-top:30px;
+}
+
+.form-group textarea{
+	width: 75%;
+}
+
+.form-group input{
+	width: 65%;
+}
+
+#combobox{
+	width: 15%;
+}
+
+#NomeCliente{
+	width: 200px;
+}
+
+.img_contato{
+	width: 125%;
+	height: 400px;
+}
+
+.container img {
+	width: 100%;
+	height: 70%;
+}
+
+.cadColuna1{
+	width: 60%;	
+	height: 150%;
+}
+.cadColuna2{
+	width: 60%;	
+	height: 450%;
+}
+
+.quemsomos{
+	width: 450px;
+	height: 200px;
+}
+
+<!-- CSS Rodapé -->
+
+.rodape{
+	text-align: center;
+	margin-top: 10%;
+	background-color: #808080;
+}
+
+.logo{
+	width: 1140px;
+	height: 400px;
+	margin-bottom: -130px;
+	margin-top: -83px;	
+}
+
+.logo2 {
+	width: 1140px;
+	height: 400px;
+	margin-bottom: -117px;
+	margin-top: -50px;		
+}
+
+.container_contato {
+	width: 100%;
+	height: 500px;
+	background-color: #FFFFFF; /* BRANCO */
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	float: left;
+	margin-bottom: 5%;
+}
+
+.container_localizacao {
+	width: 100%;
+	height: 640px;
+	background-color: #FFFFFF; /* BRANCO */
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-bottom: 20px;
+	float: left;
+	margin-bottom: 5%;
+}
+
+
+.container_cadClientes{
+	width: 100%;
+	height: 800px;
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_cadReserva{
+	width: 100%;
+	height: 650px;
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_cadHospedagem{
+	width: 100%;
+	height: 580px;
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_cadVendaIngresso{
+	width: 100%;
+	height: 450px;
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_listaClientes{
+	width: 100%;
+	height: 1000px;
+	background-color: #FFFFFF; /* BRANCO */
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_listaReserva{
+	width: 150%;
+	height: 1000px;
+	background-color: #FFFFFF; /* BRANCO */
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px; /* padding espaco da borda*/
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_listaHospedagem{
+	width: 100%;
+	height: 1000px;
+	background-color: #FFFFFF; /* BRANCO */
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.container_listaVendaIngresso{
+	width: 100%;
+	height: 1000px;
+	background-color: #FFFFFF; /* BRANCO */
+	box-shadow: 2px 2px 20px #888;	
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 5px;
+}
+
+.botaoSalvar{
+	width: 100%;
+	height: 20px; 
+	float: right;
+	margin-top: 20px;
+}
+
+.limpar{
+	width: 70%;
+	height: 20px; 	
+	margin-top: 75px;
+}
+
+.SalvarLimpar{
+	width: 70%;
+	height: 20px; 	
+	
+		
+}

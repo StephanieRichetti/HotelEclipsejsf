@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+		<link rel="stylesheet" href="#{resource['css/padrao.css']}" />
+
+<ui:composition template="WEB-INF/templates/base.xhtml">	
+	<ui:define name="title">Localização</ui:define>
+	<ui:define name="content">
+				
+	<div class="panel panel-default col-md-20">
+			<div class="panel-body">
+			
+				
+		<div class="conteudo_localizacao">	
+				<h2>Localização</h2>	
+			O Hotel Eclipse está a poucos minutos da praia do Flamengo e de vários pontos turísticos do Rio de Janeiro, como os Arcos da Lapa.
+			
+		</div>
+		
+			<div class="mapa" >
+				
+				<br /><iframe src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;geocode=&amp;q=Rua+Riachuelo++200-+Centro,+Rio+de+Janeiro+-+RJ+&amp;aq=&amp;sll=-22.914752,-43.18635&amp;sspn=0.001245,0.002631&amp;ie=UTF8&amp;hq=&amp;hnear=R.+Riachuelo,+200+-+Centro,+Rio+de+Janeiro,+20230-015&amp;ll=-22.914953,-43.187204&amp;spn=0.00249,0.005262&amp;t=m&amp;z=14&amp;output=embed" width="100%" height="600" frameborder="10" style="border: 0">
+			
+				</iframe>	
+				
+				</div>
+	</div>
+		</div>
+	
+	</ui:define>
+</ui:composition>
+
+</html>

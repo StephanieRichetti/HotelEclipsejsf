@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<link rel="stylesheet" href="#{resource['css/padrao.css']}"/>
+
+<ui:composition template="WEB-INF/templates/base.xhtml">
+		<h1>Login Administrador</h1>
+	
+	<ui:define name="content">
+		<div class="panel panel-default col-md-20" >
+			<div class="panel-body">
+			<h:panelGroup rendered="#{not empty facesContext.messageList}">
+				<div class="alert alert-warning alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h:messages></h:messages>
+				</div>
+			</h:panelGroup>
+				<h:form>
+					<div class="form-group">
+						<h:outputLabel value="Usuário" />
+						<h:inputText value="#{sessaoAdministradorMb.adminLogin.nome}"
+							styleClass="form-control" />
+					</div>
+					<div class="form-group">
+						<h:outputLabel value="Senha" />
+						<h:inputSecret value="#{sessaoAdministradorMb.adminLogin.senha}"
+							styleClass="form-control" />
+					</div>
+					<h:commandButton action="#{sessaoAdministradorMb.fazerLogin2}"
+						styleClass="btn btn-success" value="Entrar" />
+					<input type="reset" value="Limpar" class="btn btn-default" />
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

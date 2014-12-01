@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<ui:define name="content">
+
+		<div class="corpo">
+			<div class="container_listaVendaIngresso">
+				<h1>
+					Lista <small>Venda Ingresso</small>
+				</h1>
+				<br />
+				<h:form>
+					<h:dataTable value="#{vendaIngressoMb.listaVendaIngresso}" var="listarVendaIngresso"
+						class="table table-striped">
+						<h:column>
+							<f:facet name="header">Cód.</f:facet>
+							<h:outputText value="#{listarVendaIngresso.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{listarVendaIngresso.nomeCliente}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">DataEvento</f:facet>
+							<h:outputText value="#{listarVendaIngresso.dataEvento}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Setor</f:facet>
+							<h:outputText value="#{listarVendaIngresso.setor}" />
+						</h:column>
+									
+						<h:column>
+							<f:facet name="header"/>
+							<h:commandLink action="#{vendaIngressoMb.editar(listarVendaIngresso.id)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-pencil"/>
+							</h:commandLink>	
+							<h:commandLink action="#{vendaIngressoMb.excluir(listarVendaIngresso.id)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-trash"/>
+							</h:commandLink>
+						</h:column> 
+					</h:dataTable>
+
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+
+</html>

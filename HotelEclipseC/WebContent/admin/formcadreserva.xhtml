@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<ui:define name="content">
+
+
+		<div class="corpo">
+			<div class="container_cadReserva">
+				<h1>
+					Cadastro <small>Reserva</small>
+				</h1>
+				<br />
+				<div class="col-md-12">
+					<h:form role="form">
+						<div class="cadReserva">
+							<h:panelGrid rendered="#{!empty reservaMb.reserva.id}">
+								<div class="form-group">
+									<h:outputLabel value="Cód:" />
+									<h:inputText styleClass="form-control date" readonly="true"
+										value="#{reservaMb.reserva.id}" />
+								</div>
+							</h:panelGrid>
+							<h:inputHidden value="#{reservaMb.reserva.id}" />
+
+							<div class="form-group">
+								<h:outputLabel value="Nome:" />
+								<h:inputText id="NomeCliente"
+									value="#{reservaMb.reserva.nomeCliente}" type="text"
+									class="form-control" placeholder="Nome" />
+							</div>
+							<div class="form-group">
+								<h:outputLabel value="Entrada:" />
+								<input id="Entrada" value="#{reservaMb.reserva.entrada}"
+									type="date" class="form-control" placeholder="Entrada" />
+							</div>
+							<div class="form-group">
+								<h:outputLabel value="Saída:" />
+								<input id="Saida" value="#{reservaMb.reserva.saida}" type="date"
+									class="form-control" placeholder="Saida" />
+							</div>
+
+
+							<div class="form-group" id="combobox">
+								<h:outputLabel value="Categoria Quartos:" />
+								<h:selectOneMenu value="#{reservaMb.reserva.quartos}"
+									styleClass="form-control">
+									<f:selectItem itemValue="Classic" itemLabel="Classic" />
+									<f:selectItem itemValue="Superiores" itemLabel="Superiores" />
+									<f:selectItem itemValue="Simples" itemLabel="Simples" />
+									<f:selectItem itemValue="Solteiro" itemLabel="Solteiro" />
+									<f:selectItem itemValue="Duplo Solteiro"
+										itemLabel="Duplo Solteiro" />
+									<f:selectItem itemValue="Casal" itemLabel="Casal" />
+								</h:selectOneMenu>
+							</div>
+
+							<div class="form-group" id="combobox">
+								<h:outputLabel value="Quantidade Pessoas:" />
+								<h:selectOneMenu value="#{reservaMb.reserva.quantidadePessoas}"
+									styleClass="form-control">
+									<f:selectItem itemValue="01" itemLabel="01" />
+									<f:selectItem itemValue="02" itemLabel="02" />
+									<f:selectItem itemValue="03" itemLabel="03" />
+									<f:selectItem itemValue="04" itemLabel="04" />
+									<f:selectItem itemValue="05" itemLabel="05" />
+									<f:selectItem itemValue="06" itemLabel="06" />
+									<f:selectItem itemValue="07" itemLabel="07" />
+									<f:selectItem itemValue="08" itemLabel="08" />
+									<f:selectItem itemValue="09" itemLabel="09" />
+									<f:selectItem itemValue="10" itemLabel="10" />
+								</h:selectOneMenu>
+							</div>
+							<div class="form-group">
+								<h:outputLabel value="Observação:" />
+								<h:inputText id="Observacao"
+									value="#{reservaMb.reserva.observacao}" type="text"
+									class="form-control" placeholder="Observacao" />
+							</div>
+
+						</div>
+						<div class="botaoSalvar">
+							<h:commandButton action="#{reservaMb.salvar}"
+								styleClass="btn btn-default" value="Salvar" />
+
+							&nbsp;&nbsp;
+							<h:commandButton styleClass="btn btn-default" type="reset"
+								value="Limpar" />
+						</div>
+
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
+

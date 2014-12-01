@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<link rel="stylesheet" href="#{resource['css/padrao.css']}" />
+
+<ui:composition template="WEB-INF/templates/base.xhtml">
+	<ui:define name="title">Hotel Eclipse</ui:define>
+	<ui:define name="content">
+	
+	<!-- LIST -->
+	 		<div class="panel panel-default col-md-20" >
+	
+		<!-- Slide -->
+		 		<p>
+				<div id="myCarousel" class="carousel slide" style="height: 400px; width:850px; margin-left: 150px; " >
+				         <ol class="carousel-indicators">
+						      <li data-target="#myCarousel" data-slide-to = "0" class="active"></li>
+							  <li data-target="#myCarousel" data-slide-to = "1"></li>
+							  <li data-target="#myCarousel" data-slide-to = "2"></li>
+							  <li data-target="#myCarousel" data-slide-to = "3"></li>
+							  <li data-target="#myCarousel" data-slide-to = "4"></li>
+							  <li data-target="#myCarousel" data-slide-to = "5"></li>
+							  <li data-target="#myCarousel" data-slide-to = "6"></li>
+							 											  
+						 </ol>
+						 
+						 <div class="carousel-inner" style="height: 400px;">
+						       <div class="item active" >
+							        <img src="resources/img/apt1.jpg" alt="apt1" class="img-responsive">
+							        </img>
+									   <div class="carousel-caption">
+									         <h3></h3>
+									   </div>
+						       </div>
+							   
+							   <div class="item">
+							        <img src="resources/img/apt2.jpg" alt="apt2" class="img-responsive"></img>
+						       </div>
+							   
+							   <div class="item">
+							        <img src="resources/img/apt3.jpg" alt="apt3" class="img-responsive"></img>
+						       </div>
+						       
+						        <div class="item">
+							        <img src="resources/img/apt4.jpg" alt="apt4" class="img-responsive"></img>
+						       </div>
+                                       
+                                <div class="item">
+							        <img src="resources/img/apt5.jpg" alt="apt5" class="img-responsive"></img>
+						       </div>         
+						       <div class="item">
+							        <img src="resources/img/apt6.jpg" alt="apt6" class="img-responsive"></img>
+						       </div> 
+						       <div class="item">
+							        <img src="resources/img/apt7.jpg" alt="apt7" class="img-responsive"></img>
+						       </div>               
+                                                       
+						 </div>
+						 
+						 <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+						       <span class="icon-prev"></span>
+						 </a>
+						 
+						 <a class="carousel-control right" href="#myCarousel" data-slide="next">
+						       <span class="icon-next"></span>
+						 </a>
+						 
+						 
+				   </div>
+				
+				</p>
+		 		</div>		
+		
+		
+	</ui:define>
+</ui:composition>
+
+
+</html>

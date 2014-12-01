@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<ui:define name="content">
+		
+		<h:outputScript library="js" name="cadastroClienteMask.js"></h:outputScript>
+		
+		<div class="corpo">
+			<div class="container_cadClientes">
+				<h1>
+					Cadastro <small>Clientes</small>
+				</h1>
+				<br />
+				<div class="col-md-20">
+					<h:form role="form">
+						<div class="cadColuna1">
+
+							<h:panelGrid rendered="#{!empty clienteMb.cliente.id}">
+								<div class="form-group">
+									<h:outputLabel value="Cód:" />
+									<h:inputText styleClass="form-control " readonly="true"
+										value="#{clienteMb.cliente.id}" />
+								</div>
+							</h:panelGrid>
+							<h:inputHidden value="#{clienteMb.cliente.id}" />
+
+							<div class="form-group">
+								<h:outputLabel value="Nome:" />
+								<h:inputText id="NomeCliente" value="#{clienteMb.cliente.nome}"
+									type="text"  class="form-control" placeholder="Nome"  />
+							</div>
+							
+							<div class="form-group">
+								<h:outputLabel value="E-mail:" />
+								<h:inputText  value="#{clienteMb.cliente.email}" type="email"
+									class="form-control email" placeholder="Email" onblur="validacaoEmail(f1.email)"/>
+									
+							</div>
+
+							<div class="form-group">
+								<h:outputLabel value="CPF:" />
+								<h:inputText  value="#{clienteMb.cliente.cpf}" type="text"
+									class="form-control cpf" />
+								
+							</div>
+							<div class="form-group">
+								<h:outputLabel value="Telefone:" />
+								<h:inputText id="telefone" value="#{clienteMb.cliente.telefone}"
+									styleClass="form-control telefone" />
+							</div>
+						
+							<div class="form-group">
+								<h:outputLabel value="Endereço:" />
+								<h:inputText value="#{clienteMb.cliente.endereco}"
+									styleClass="form-control" />
+							</div>
+
+						</div>
+						<div class="cadColuna2">
+							<div class="form-group">
+								<h:outputLabel value="Bairro:" />
+								<h:inputText value="#{clienteMb.cliente.bairro}"
+									styleClass="form-control" />
+							</div>
+							
+							<div class="form-group">
+								<h:outputLabel value="Cidade:" />
+								<h:inputText value="#{clienteMb.cliente.cidade}"
+									styleClass="form-control"  />
+									
+							</div>
+							
+														
+							<div class="form-group" id="combobox">
+							<h:outputLabel value="Estado:" />
+								<h:selectOneMenu value="#{clienteMb.cliente.estado}"
+									styleClass="form-control">
+									<f:selectItem itemValue="AC" itemLabel="AC" />
+									<f:selectItem itemValue="AL" itemLabel="AL" />
+									<f:selectItem itemValue="AP" itemLabel="AP" />
+									<f:selectItem itemValue="AM" itemLabel="AM" />
+									<f:selectItem itemValue="BA" itemLabel="BA" />
+									<f:selectItem itemValue="CE" itemLabel="CE" />
+									<f:selectItem itemValue="DF" itemLabel="DF" />
+									<f:selectItem itemValue="ES" itemLabel="ES" />
+									<f:selectItem itemValue="GO" itemLabel="GO" />
+									<f:selectItem itemValue="MA" itemLabel="MA" />
+									<f:selectItem itemValue="MT" itemLabel="MT" />
+									<f:selectItem itemValue="MS" itemLabel="MS" />
+									<f:selectItem itemValue="MG" itemLabel="MG" />
+									<f:selectItem itemValue="PA" itemLabel="PA" />
+									<f:selectItem itemValue="PB" itemLabel="PB" />
+									<f:selectItem itemValue="PR" itemLabel="PR" />
+									<f:selectItem itemValue="PE" itemLabel="PE" />
+									<f:selectItem itemValue="PI" itemLabel="PI" />
+									<f:selectItem itemValue="RJ" itemLabel="RJ" />
+									<f:selectItem itemValue="RN" itemLabel="RN" />
+									<f:selectItem itemValue="RS" itemLabel="RS" />
+									<f:selectItem itemValue="RO" itemLabel="RO" />
+									<f:selectItem itemValue="RR" itemLabel="RR" />
+									<f:selectItem itemValue="SC" itemLabel="SC" />
+									<f:selectItem itemValue="SP" itemLabel="SP" />
+									<f:selectItem itemValue="SE" itemLabel="SE" />
+									<f:selectItem itemValue="TO" itemLabel="TO" />
+								</h:selectOneMenu>
+							</div>
+							
+						</div>
+						<div class="botaoSalvar">
+							<h:commandButton action="#{clienteMb.salvar}"
+								styleClass="btn btn-default" value="Salvar" />
+						
+					
+						&nbsp;&nbsp;<h:commandButton styleClass="btn btn-default"  type="reset" value="Limpar" />
+					</div>
+						
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+
+</html>

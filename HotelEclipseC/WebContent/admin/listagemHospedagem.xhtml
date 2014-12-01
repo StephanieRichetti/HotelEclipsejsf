@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<ui:define name="content">
+
+		<div class="corpo">
+			<div class="container_listaHospedagem">
+				<h1>
+					Lista <small>Hospedagem</small>
+				</h1>
+				<br />
+				<h:form>
+					<h:dataTable value="#{hospedagemMb.listaHospedagem}"
+						var="hospedagem" class="table table-striped">
+						<h:column>
+							<f:facet name="header">Cód.</f:facet>
+							<h:outputText value="#{hospedagem.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{hospedagem.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Categoria Quartos</f:facet>
+							<h:outputText value="#{hospedagem.categoriaQuartos}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Quantidade Pessoas</f:facet>
+							<h:outputText value="#{hospedagem.quantidadePessoas}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Entrada</f:facet>
+							<h:outputText value="#{hospedagem.entrada}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">Saida</f:facet>
+							<h:outputText value="#{hospedagem.saida}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header" />
+							<h:commandLink action="#{hospedagemMb.editar(hospedagem.id)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-pencil" />
+							</h:commandLink>
+							<h:commandLink action="#{hospedagemMb.excluir(hospedagem.id)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-trash" />
+							</h:commandLink>
+						</h:column>
+
+					</h:dataTable>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+
+</html>

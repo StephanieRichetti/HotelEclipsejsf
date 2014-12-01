@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<ui:define name="content">
+
+		<div class="corpo">
+			<div class="container_listaClientes">
+				<h1>
+					Lista <small>Clientes</small>
+				</h1>
+				<br />
+				<h:form>
+					<h:dataTable value="#{clienteMb.listaClientes}" var="listarcli"
+						class="table table-striped">
+						<h:column>
+							<f:facet name="header">Cód.</f:facet>
+							<h:outputText value="#{listarcli.id}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{listarcli.nome}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">CPF</f:facet>
+							<h:outputText value="#{listarcli.cpf}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Telefone</f:facet>
+							<h:outputText value="#{listarcli.telefone}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							<h:outputText value="#{listarcli.email}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Endereco</f:facet>
+							<h:outputText value="#{listarcli.endereco}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">Bairro</f:facet>
+							<h:outputText value="#{listarcli.bairro}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">Cidade</f:facet>
+							<h:outputText value="#{listarcli.cidade}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Estado</f:facet>
+							<h:outputText value="#{listarcli.estado}" />
+						</h:column>					
+		
+						<h:column>
+							<f:facet name="header"/>
+							<h:commandLink action="#{clienteMb.editar(listarcli.ID)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-pencil"/>
+							</h:commandLink>	
+							<h:commandLink action="#{clienteMb.excluir(listarcli.ID)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-trash"/>
+							</h:commandLink>
+						</h:column> 
+					</h:dataTable>
+
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../WEB-INF/templates/base.xhtml">
+	<ui:define name="content">
+
+		<div class="corpo">
+			<div class="container_listaReserva">
+				<h1>
+					Lista <small>Reserva</small>
+				</h1>
+				<br />
+				<h:form>
+					<h:dataTable value="#{reservaMb.listaReserva}" var="listarreserva"
+						class="table table-striped">
+						<h:column>
+							<f:facet name="header">Cód.</f:facet>
+							<h:outputText value="#{listarreserva.ID}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							<h:outputText value="#{listarreserva.nomeCliente}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Categoria</f:facet>
+							<h:outputText value="#{listarreserva.categoriaQuartos}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Quantidade Pessoas</f:facet>
+							<h:outputText value="#{listarreserva.quantidadePessoas}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Entrada</f:facet>
+							<h:outputText value="#{listarreserva.entrada}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">Saida</f:facet>
+							<h:outputText value="#{listarreserva.saida}" />
+						</h:column>
+							<h:column>
+							<f:facet name="header">Observação</f:facet>
+							<h:outputText value="#{listarreserva.observacao}" />
+						</h:column>
+																		
+						<h:column>
+							<f:facet name="header"/>
+							<h:commandLink action="#{reservaMb.editar(listarreserva.ID)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-pencil"/>
+							</h:commandLink>	
+							<h:commandLink action="#{reservaMb.excluir(listarreserva.ID)}"
+								styleClass="btn">
+								<span class="glyphicon glyphicon-trash"/>
+							</h:commandLink>
+						</h:column> 
+					</h:dataTable>
+
+				</h:form>			
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+
+
+</html>
