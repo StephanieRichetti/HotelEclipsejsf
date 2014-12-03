@@ -20,15 +20,13 @@ public class HospedagemMb {
 	
 	private Hospedagem hospedagem;
 	private HospedagemDao dao;
-
 	private List<Hospedagem> listaHospedagem;
 	
 
 	@PostConstruct
 	public void init(){
 		hospedagem = new Hospedagem();
-		dao = new HospedagemDao();
-	
+		dao = new HospedagemDao();	
 	}
 	
 	public List<Hospedagem> getListaHospedagem() {
@@ -50,11 +48,11 @@ public class HospedagemMb {
 		this.hospedagem = hospedagem;
 	}
 
+
 	public String salvar() {
 		dao.salvar(hospedagem);
 		return "listagemHospedagem";
 	}
-
 	public String editar(Long id){
 	 hospedagem = dao.buscarPorId(id);
 		return "formcadhospedagem";

@@ -16,7 +16,7 @@
 					Cadastro <small>Reserva</small>
 				</h1>
 				<br />
-				<div class="col-md-12">
+				<div class="col-md-15">
 					<h:form role="form">
 						<div class="cadReserva">
 							<h:panelGrid rendered="#{!empty reservaMb.reserva.id}">
@@ -32,17 +32,25 @@
 								<h:outputLabel value="Nome:" />
 								<h:inputText id="NomeCliente"
 									value="#{reservaMb.reserva.nomeCliente}" type="text"
-									class="form-control" placeholder="Nome" />
+									class="form-control" placeholder="Nome" style="width:500px"/>
 							</div>
 							<div class="form-group">
 								<h:outputLabel value="Entrada:" />
-								<input id="Entrada" value="#{reservaMb.reserva.entrada}"
-									type="date" class="form-control" placeholder="Entrada" />
+								<h:inputText  value="#{reservaMb.reserva.entrada}"
+									 styleClass="form-control">
+									<f:passThroughAttribute name="type" value="datetime-local"/>
+									<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm"	 />
+								</h:inputText>
 							</div>
+							
+							
 							<div class="form-group">
 								<h:outputLabel value="Saída:" />
-								<input id="Saida" value="#{reservaMb.reserva.saida}" type="date"
-									class="form-control" placeholder="Saida" />
+								<h:inputText value="#{reservaMb.reserva.saida}" type="date"
+									 styleClass="form-control">
+									<f:passThroughAttribute name="type" value="datetime-local"/>
+									<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm"	 />
+								</h:inputText>
 							</div>
 
 
@@ -78,9 +86,9 @@
 							</div>
 							<div class="form-group">
 								<h:outputLabel value="Observação:" />
-								<h:inputText id="Observacao"
+								<h:inputTextarea id="Observacao"
 									value="#{reservaMb.reserva.observacao}" type="text"
-									class="form-control" placeholder="Observacao" />
+									class="form-control" placeholder="Observacao" style="width:500px"/>
 							</div>
 
 						</div>

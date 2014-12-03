@@ -23,11 +23,11 @@
   </context-param>
   <context-param>
     <param-name>usuario</param-name>
-    <param-value>stephanierc16@gmail.com</param-value>
+    <param-value>hoteleclipse02@gmail.com</param-value>
   </context-param>
   <context-param>
     <param-name>senha</param-name>
-    <param-value>306134659369</param-value>
+    <param-value>bkss2014</param-value>
   </context-param>
   <context-param>
     <param-name>tls</param-name>

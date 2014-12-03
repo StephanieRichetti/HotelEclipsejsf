@@ -46,20 +46,22 @@ public class ReservaMb {
 	public void setListaReserva(List<Reserva> listaReserva) {
 		this.listaReserva = listaReserva;
 	}
-
 	
 	public String salvar() {
 		dao.salvar(reserva);
 		return "listagemReserva";
 	}
 
-	public String editar(Long ID){
-		reserva = dao.buscarPorId(ID);
+	public String editar(Long id){
+		reserva = dao.buscarPorId(id);
 		return "formcadreserva";
 	}
 	
 	public String excluir(Long ID){
-	    reserva = dao.excluir(ID);
+		reserva = dao.buscarPorId(ID);
+		reserva = dao.excluir(ID);
+		listaReserva = null;
 		return "listagemReserva";
 	}
+	
 }

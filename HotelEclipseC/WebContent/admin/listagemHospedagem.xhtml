@@ -17,41 +17,41 @@
 				<br />
 				<h:form>
 					<h:dataTable value="#{hospedagemMb.listaHospedagem}"
-						var="hospedagem" class="table table-striped">
+						var="listarHospedagem" class="table table-striped">
 						<h:column>
 							<f:facet name="header">Cód.</f:facet>
-							<h:outputText value="#{hospedagem.id}" />
+							<h:outputText value="#{listarHospedagem.id}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Nome</f:facet>
-							<h:outputText value="#{hospedagem.nome}" />
+							<h:outputText value="#{listarHospedagem.nome}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Categoria Quartos</f:facet>
-							<h:outputText value="#{hospedagem.categoriaQuartos}" />
+							<h:outputText value="#{listarHospedagem.categoriaQuartos}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Quantidade Pessoas</f:facet>
-							<h:outputText value="#{hospedagem.quantidadePessoas}" />
+							<h:outputText value="#{listarHospedagem.quantidadePessoas}" />
 						</h:column>
 
 						<h:column>
 							<f:facet name="header">Entrada</f:facet>
-							<h:outputText value="#{hospedagem.entrada}" />
+							<h:outputText value="#{listarHospedagem.entrada}" />
 						</h:column>
 
 						<h:column>
 							<f:facet name="header">Saida</f:facet>
-							<h:outputText value="#{hospedagem.saida}" />
+							<h:outputText value="#{listarHospedagem.saida}" />
 						</h:column>
 
 						<h:column>
 							<f:facet name="header" />
-							<h:commandLink action="#{hospedagemMb.editar(hospedagem.id)}"
+							<h:commandLink action="#{hospedagemMb.editar(listarHospedagem.id)}"
 								styleClass="btn">
 								<span class="glyphicon glyphicon-pencil" />
 							</h:commandLink>
-							<h:commandLink action="#{hospedagemMb.excluir(hospedagem.id)}"
+							<h:commandLink action="#{hospedagemMb.excluir(listarHospedagem.id)}"
 								styleClass="btn">
 								<span class="glyphicon glyphicon-trash" />
 							</h:commandLink>

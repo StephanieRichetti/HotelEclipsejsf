@@ -20,7 +20,7 @@
 						class="table table-striped">
 						<h:column>
 							<f:facet name="header">Cód.</f:facet>
-							<h:outputText value="#{listarreserva.ID}" />
+							<h:outputText value="#{listarreserva.id}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Nome</f:facet>
@@ -49,11 +49,11 @@
 																		
 						<h:column>
 							<f:facet name="header"/>
-							<h:commandLink action="#{reservaMb.editar(listarreserva.ID)}"
+							<h:commandLink action="#{reservaMb.editar(listarreserva.id)}"
 								styleClass="btn">
 								<span class="glyphicon glyphicon-pencil"/>
 							</h:commandLink>	
-							<h:commandLink action="#{reservaMb.excluir(listarreserva.ID)}"
+							<h:commandLink action="#{reservaMb.excluir(listarreserva.id)}"
 								styleClass="btn">
 								<span class="glyphicon glyphicon-trash"/>
 							</h:commandLink>

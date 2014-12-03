@@ -18,7 +18,8 @@
 				<div class="col-md-12">
 					<h:form role="form">
 						<div class="cadVendaIngresso">
-							<h:panelGrid rendered="#{!empty vendaIngressoMb.vendaIngresso.id}">
+							<h:panelGrid
+								rendered="#{!empty vendaIngressoMb.vendaIngresso.id}">
 								<div class="form-group">
 									<h:outputLabel value="Cód:" />
 									<h:inputText styleClass="form-control" readonly="true"
@@ -29,30 +30,52 @@
 
 							<div class="form-group">
 								<h:outputLabel value="Nome:" />
-								<h:inputText id="NomeCliente" value="#{vendaIngressoMb.vendaIngresso.nomeCliente}"
-									type="text" class="form-control" placeholder="Nome" />
+								<h:inputText id="NomeCliente"
+									value="#{vendaIngressoMb.vendaIngresso.nomeCliente}"
+									type="text" class="form-control" placeholder="Nome"
+									style="width:500px" />
 							</div>
+
+
 							<div class="form-group">
 								<h:outputLabel value="Data Evento:" />
-								<input id="dataEvento" value="#{vendaIngressoMb.vendaIngresso.dataEvento}"
-									type="date" class="form-control" placeholder="DataEvento" />
+								<h:inputText value="#{vendaIngressoMb.vendaIngresso.dataEvento}"
+									styleClass="form-control">
+									<f:passThroughAttribute name="type" value="datetime-local"/>
+									<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm"	 />
+								</h:inputText>
 							</div>
-							
-							<div class="form-group">
+
+							<div class="form-group" id="combobox">
 								<h:outputLabel value="Setor:" />
-								<h:inputText id="Setor" value="#{vendaIngressoMb.vendaIngresso.setor}"
-									type="text" class="form-control" placeholder="setor" />
+								<h:selectOneMenu value="#{vendaIngressoMb.vendaIngresso.setor}"
+									styleClass="form-control">
+									<f:selectItem itemValue="A" itemLabel="A" />
+									<f:selectItem itemValue="B" itemLabel="B" />
+									<f:selectItem itemValue="C" itemLabel="C" />
+									<f:selectItem itemValue="D" itemLabel="D" />
+									<f:selectItem itemValue="E" itemLabel="E" />
+									<f:selectItem itemValue="F" itemLabel="F" />
+									<f:selectItem itemValue="G" itemLabel="G" />
+									<f:selectItem itemValue="H" itemLabel="H" />
+									<f:selectItem itemValue="I" itemLabel="I" />
+									<f:selectItem itemValue="J" itemLabel="J" />
+									<f:selectItem itemValue="K" itemLabel="K" />
+
+								</h:selectOneMenu>
 							</div>
-							
-							
+
+
 						</div>
 						<div class="botaoSalvar">
 							<h:commandButton action="#{vendaIngressoMb.salvar}"
-								styleClass="btn btn-default" value="Salvar"  />
-														
-						&nbsp;&nbsp;<h:commandButton styleClass="btn btn-default"  type="reset" value="Limpar" />
-					</div>
-										
+								styleClass="btn btn-default" value="Salvar" />
+
+							&nbsp;&nbsp;
+							<h:commandButton styleClass="btn btn-default" type="reset"
+								value="Limpar" />
+						</div>
+
 					</h:form>
 				</div>
 			</div>
