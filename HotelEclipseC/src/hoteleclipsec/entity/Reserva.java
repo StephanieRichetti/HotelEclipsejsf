@@ -18,7 +18,6 @@ public class Reserva {
 	@Column
 	private Date entrada;
 	private Date saida;
-	private Integer quartos;
 	private Integer quantidadePessoas;
 	private String categoriaQuartos;
 	private String observacao;
@@ -56,13 +55,6 @@ public class Reserva {
 		this.saida = saida;
 	}
 
-	public Integer getQuartos() {
-		return quartos;
-	}
-
-	public void setQuartos(Integer quartos) {
-		this.quartos = quartos;
-	}
 
 	public String getNomeCliente() {
 		return nomeCliente;

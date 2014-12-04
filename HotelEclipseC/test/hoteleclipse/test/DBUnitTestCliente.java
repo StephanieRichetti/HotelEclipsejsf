@@ -12,25 +12,20 @@ import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 
 import hoteleclipsec.dao.ClienteDao;
-import hoteleclipsec.dao.ContatoDao;
-import hoteleclipsec.dao.HospedagemDao;
-import hoteleclipsec.dao.ReservaDao;
 import hoteleclipsec.util.Util;
 
 
 
-public class DBUnitTest extends DBTestCase{
+public class DBUnitTestCliente extends DBTestCase{
 	
 	private EntityManager entityManager;
 	private EntityManagerFactory entityManagerFactory;
-	private ClienteDao daoCliente;
-	private ContatoDao daoContato;
-	private HospedagemDao daoHospedagem;
-	private ReservaDao daoReserva;
+	public ClienteDao dao;
+
 	
-	public DBUnitTest(){
+	public DBUnitTestCliente(){
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS, "com.mysql.jdbc.Driver");
-		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "jdbc:mysql://localhost:3306/hoteleclipsesa_db");
+		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "jdbc:mysql://localhost:3306/hoteleclipsec_db");
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "root");
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "");
 	}
@@ -49,7 +44,7 @@ public class DBUnitTest extends DBTestCase{
 		Util.iniciarPersistenceUnit();
 		entityManager = Util.createEntityManager();
 		entityManager.getTransaction().begin();
-		daoCliente = new ClienteDao(entityManager);		
+		dao = new ClienteDao(entityManager);		
 	}
 	
 	public void close(){
@@ -58,23 +53,14 @@ public class DBUnitTest extends DBTestCase{
 		if (entityManagerFactory != null) {
 			entityManagerFactory.close();
 		}	
-		daoCliente = null;
+		dao = null;
 	}
 
 	public ClienteDao getDaoCliente() {
-		return daoCliente;
-	}
-	
-	public ContatoDao getDaoContato() {
-		return daoContato;
-	}
-	
-	public HospedagemDao getDaoHospedagem() {
-		return daoHospedagem;
+		return dao;
 	}
 
-	public ReservaDao getDaoReserva() {
-		return daoReserva;
-	}
+	
+	
 
 }

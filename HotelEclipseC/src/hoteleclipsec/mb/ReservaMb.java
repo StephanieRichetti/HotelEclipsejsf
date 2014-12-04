@@ -1,7 +1,9 @@
 package hoteleclipsec.mb;
 
 import hoteleclipsec.dao.ReservaDao;
+
 import hoteleclipsec.entity.Reserva;
+
 import hoteleclipsec.util.Util;
 
 import java.util.List;
@@ -20,24 +22,14 @@ public class ReservaMb {
 	private List<Reserva> listaReserva;
 	
 
-	public Reserva getReserva() {
-		return reserva;
+	@PostConstruct
+	public void init(){
+		reserva = new Reserva();
+		dao = new ReservaDao();
 	}
-
-	public void setReserva(Reserva reserva) {
-		this.reserva = reserva;
-	}
-
-	public ReservaDao getDao() {
-		return dao;
-	}
-
-	public void setDao(ReservaDao dao) {
-		this.dao = dao;
-	}
-
+	
 	public List<Reserva> getListaReserva() {
-		if(listaReserva == null){
+		if (listaReserva == null) {
 			listaReserva = dao.listar();
 		}
 		return listaReserva;
@@ -47,6 +39,14 @@ public class ReservaMb {
 		this.listaReserva = listaReserva;
 	}
 	
+	public Reserva getReserva() {
+		return reserva;
+	}
+	
+	public void setReserva(Reserva reserva) {
+		this.reserva = reserva;
+	}
+
 	public String salvar() {
 		dao.salvar(reserva);
 		return "listagemReserva";

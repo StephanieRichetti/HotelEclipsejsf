@@ -17,6 +17,10 @@ import javax.persistence.Query;
 		public VendaIngressoDao() {
 			entityManager = Util.getEntityManager();
 		}
+		
+		public VendaIngressoDao(EntityManager entityManager) {
+			this.entityManager = entityManager;
+		}
 
 		public List<VendaIngresso> listar() {
 			Query query = entityManager.createQuery("From VendaIngresso", VendaIngresso.class);

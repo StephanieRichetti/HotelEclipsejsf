@@ -13,9 +13,9 @@ public class Hospedagem {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(length = 30, nullable = false)
+	@Column(length=30, nullable=false)
 	private String nome;
-	@Column(length = 14, nullable = false)
+	@Column(length=14, nullable=false,unique=true)
 	private String categoriaQuartos;
 	private Integer quantidadePessoas;
 	private Date entrada;
@@ -70,3 +70,4 @@ public class Hospedagem {
 	}
 
 }
+

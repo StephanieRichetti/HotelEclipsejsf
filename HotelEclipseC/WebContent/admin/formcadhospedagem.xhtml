@@ -9,8 +9,6 @@
 <ui:composition template="../WEB-INF/templates/base.xhtml">
 	<ui:define name="content">
 
-		<h:outputScript library="js" name="cadastroHospedagemMask.js"></h:outputScript>
-		
 		<div class="corpo">
 			<div class="container_cadHospedagem">
 				<h1>
@@ -31,8 +29,8 @@
 
 							<div class="form-group">
 								<h:outputLabel value="Nome:" />
-								<h:inputText  value="#{hospedagemMb.hospedagem.nome}"
-									type="text" class="form-control nome" placeholder="Nome" style="width:500px"/>
+								<h:inputText id="Nome" value="#{hospedagemMb.hospedagem.nome}"
+									type="text" class="form-control" placeholder="Nome" />
 							</div>
 							
 							<div class="form-group" id="combobox">
@@ -62,32 +60,33 @@
 									<f:selectItem itemValue="10" itemLabel="10" />
 								</h:selectOneMenu>
 								</div>
-								
-								<div class="form-group">
+										
+							<div class="form-group">
 								<h:outputLabel value="Entrada:" />
-								<h:inputText  value="#{hospedagemMb.hospedagem.entrada}"
-								 styleClass="form-control">
-									<f:passThroughAttribute name="type" value="datetime-local"/>
-									<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm"	 />
+								<h:inputText  value="#{hospedagemMb.hospedagem.entrada}" styleClass="form-control">
+								<f:passThroughAttribute	name="type" value="datetime-local"/>
+								<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm" />
 								</h:inputText>
 							</div>
-						
+							
 							<div class="form-group">
 								<h:outputLabel value="Saida:" />
-								<h:inputText  value="#{hospedagemMb.hospedagem.saida}"
-									 styleClass="form-control">
-									<f:passThroughAttribute name="type" value="datetime-local"/>
-									<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm"	 />
+								<h:inputText  value="#{hospedagemMb.hospedagem.saida}" styleClass="form-control">
+								<f:passThroughAttribute	name="type" value="datetime-local"/>
+								<f:convertDateTime pattern="yyyy-MM-dd'T'HH:mm" />
 								</h:inputText>
-							</div>															
-														
+							</div>
+							
+							
 						</div>
-						<div class="botaoSalvar">
-						<h:commandButton action="#{hospedagemMb.salvar}"
+							<div class="botaoSalvar">
+							<h:commandButton action="#{hospedagemMb.salvar}"
 								styleClass="btn btn-default" value="Salvar" />
-																		
-						&nbsp;&nbsp;<h:commandButton styleClass="btn btn-default"  type="reset" value="Limpar" />
-					</div>
+
+							&nbsp;&nbsp;
+							<h:commandButton styleClass="btn btn-default" type="reset"
+								value="Limpar" />
+						</div>
 
 					</h:form>
 				</div>
@@ -97,4 +96,5 @@
 	</ui:define>
 </ui:composition>
 </html>
+
 

@@ -16,44 +16,38 @@
 				</h1>
 				<br />
 				<h:form>
-					<h:dataTable value="#{reservaMb.listaReserva}" var="listarreserva"
+					<h:dataTable value="#{reservaMb.listaReserva}" var="listarReserva"
 						class="table table-striped">
 						<h:column>
 							<f:facet name="header">Cód.</f:facet>
-							<h:outputText value="#{listarreserva.id}" />
+							<h:outputText value="#{listarReserva.id}"/>
 						</h:column>
 						<h:column>
 							<f:facet name="header">Nome</f:facet>
-							<h:outputText value="#{listarreserva.nomeCliente}" />
+							<h:outputText value="#{listarReserva.nomeCliente}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Categoria</f:facet>
-							<h:outputText value="#{listarreserva.categoriaQuartos}" />
+							<h:outputText value="#{listarReserva.categoriaQuartos}" />
 						</h:column>
 						<h:column>
-							<f:facet name="header">Quantidade Pessoas</f:facet>
-							<h:outputText value="#{listarreserva.quantidadePessoas}" />
+							<f:facet name="header">Qtd Pessoas</f:facet>
+							<h:outputText value="#{listarReserva.quantidadePessoas}" />
 						</h:column>
-						<h:column>
-							<f:facet name="header">Entrada</f:facet>
-							<h:outputText value="#{listarreserva.entrada}" />
+						<h:column >
+							<f:facet name="header" >Entrada</f:facet>
+							<h:outputText  value="#{listarReserva.entrada}"  />
 						</h:column>
-						<h:column>
-							<f:facet name="header">Saida</f:facet>
-							<h:outputText value="#{listarreserva.saida}" />
-						</h:column>
-							<h:column>
-							<f:facet name="header">Observação</f:facet>
-							<h:outputText value="#{listarreserva.observacao}" />
-						</h:column>
-																		
+						
+					 	
+																	
 						<h:column>
 							<f:facet name="header"/>
-							<h:commandLink action="#{reservaMb.editar(listarreserva.id)}"
+							<h:commandLink action="#{reservaMb.editar(listarReserva.id)}"
 								styleClass="btn">
 								<span class="glyphicon glyphicon-pencil"/>
 							</h:commandLink>	
-							<h:commandLink action="#{reservaMb.excluir(listarreserva.id)}"
+							<h:commandLink action="#{reservaMb.excluir(listarReserva.id)}"
 								styleClass="btn">
 								<span class="glyphicon glyphicon-trash"/>
 							</h:commandLink>

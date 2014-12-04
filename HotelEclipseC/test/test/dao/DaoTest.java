@@ -1,7 +1,7 @@
 package test.dao;
 
 import static org.junit.Assert.assertNotNull;
-import hoteleclipse.test.DBUnitTest;
+import hoteleclipse.test.DBUnitTestCliente;
 
 import javax.persistence.EntityManager;
 
@@ -15,7 +15,7 @@ import hoteleclipsec.dao.HospedagemDao;
 import hoteleclipsec.dao.ReservaDao;
 import hoteleclipsec.util.Util;
 
-public class DaoTest extends DBUnitTest {
+public class DaoTest extends DBUnitTestCliente {
 	
 	private static EntityManager entityManager;
 	
@@ -27,7 +27,7 @@ public class DaoTest extends DBUnitTest {
 	
 	@Test
 	public void testEntityManager(){
-	//	assertNotNull("Gerenciamento de entidade está nulo", entityManager);
+		assertNotNull("Gerenciamento de entidade está nulo", entityManager);
 	}
 	
 	@Test
@@ -53,10 +53,9 @@ public class DaoTest extends DBUnitTest {
 	
 	@Test
 	public void testHospedagemDao() {
-	//	HospedagemDao dao = HospedagemDao(entityManager);
-	//	assertNotNull("Objeto de acesso a dados do objeto Reserva esta nulo", dao);
-	//	dao = null;
-
+		HospedagemDao dao = new HospedagemDao(entityManager);
+		assertNotNull("Objeto de acesso a dados do objeto Hospedagem esta nulo", dao);
+		dao = null;
 	}
 	
 	@AfterClass

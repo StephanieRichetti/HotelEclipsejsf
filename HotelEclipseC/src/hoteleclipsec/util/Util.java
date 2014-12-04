@@ -44,7 +44,7 @@ public class Util {
 		public static void initFactory() {
 			if(entityManagerFactory != null) return;
 			entityManagerFactory = Persistence
-			.createEntityManagerFactory("hoteleclipsesa_pu");
+			.createEntityManagerFactory("hoteleclipsesc_pu");
 
 
 			}

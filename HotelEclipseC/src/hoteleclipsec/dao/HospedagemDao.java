@@ -1,12 +1,11 @@
 package hoteleclipsec.dao;
 
-import hoteleclipsec.entity.Hospedagem;
-import hoteleclipsec.util.Util;
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import hoteleclipsec.entity.Hospedagem;
+import hoteleclipsec.util.Util;
 
 public class HospedagemDao {
 
@@ -14,6 +13,10 @@ public class HospedagemDao {
 
 	public HospedagemDao() {
 		entityManager = Util.getEntityManager();
+	}
+
+	public HospedagemDao(EntityManager entityManager) {
+		this.entityManager = entityManager;
 	}
 
 	public List<Hospedagem> listar() {
@@ -38,10 +41,9 @@ public class HospedagemDao {
 		return entityManager.find(Hospedagem.class, id);
 	}
 
-	public Hospedagem excluir(Long id) {
+	public void excluir(Long id) {
 		Hospedagem hospedagem = entityManager.getReference(Hospedagem.class, id);
 		entityManager.remove(hospedagem);
-		return hospedagem;
 	}
 
 }

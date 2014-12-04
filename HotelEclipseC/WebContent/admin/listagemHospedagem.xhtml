@@ -16,8 +16,8 @@
 				</h1>
 				<br />
 				<h:form>
-					<h:dataTable value="#{hospedagemMb.listaHospedagem}"
-						var="listarHospedagem" class="table table-striped">
+					<h:dataTable value="#{hospedagemMb.listaHospedagem}" var="listarHospedagem"
+						class="table table-striped">
 						<h:column>
 							<f:facet name="header">Cód.</f:facet>
 							<h:outputText value="#{listarHospedagem.id}" />
@@ -27,38 +27,35 @@
 							<h:outputText value="#{listarHospedagem.nome}" />
 						</h:column>
 						<h:column>
-							<f:facet name="header">Categoria Quartos</f:facet>
+							<f:facet name="header">Categoria</f:facet>
 							<h:outputText value="#{listarHospedagem.categoriaQuartos}" />
 						</h:column>
 						<h:column>
 							<f:facet name="header">Quantidade Pessoas</f:facet>
 							<h:outputText value="#{listarHospedagem.quantidadePessoas}" />
 						</h:column>
-
 						<h:column>
 							<f:facet name="header">Entrada</f:facet>
 							<h:outputText value="#{listarHospedagem.entrada}" />
 						</h:column>
-
 						<h:column>
 							<f:facet name="header">Saida</f:facet>
 							<h:outputText value="#{listarHospedagem.saida}" />
-						</h:column>
-
+						</h:column>																		
 						<h:column>
-							<f:facet name="header" />
+							<f:facet name="header"/>
 							<h:commandLink action="#{hospedagemMb.editar(listarHospedagem.id)}"
 								styleClass="btn">
-								<span class="glyphicon glyphicon-pencil" />
-							</h:commandLink>
+								<span class="glyphicon glyphicon-pencil"/>
+							</h:commandLink>	
 							<h:commandLink action="#{hospedagemMb.excluir(listarHospedagem.id)}"
 								styleClass="btn">
-								<span class="glyphicon glyphicon-trash" />
+								<span class="glyphicon glyphicon-trash"/>
 							</h:commandLink>
-						</h:column>
-
+						</h:column> 
 					</h:dataTable>
-				</h:form>
+
+				</h:form>			
 			</div>
 		</div>
 	</ui:define>

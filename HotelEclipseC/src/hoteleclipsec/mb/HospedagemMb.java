@@ -1,17 +1,15 @@
 package hoteleclipsec.mb;
 
-import hoteleclipsec.dao.HospedagemDao;
-import hoteleclipsec.dao.VendaIngressoDao;
-import hoteleclipsec.entity.Hospedagem;
-import hoteleclipsec.entity.VendaIngresso;
-import hoteleclipsec.util.Util;
-
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import hoteleclipsec.dao.HospedagemDao;
+import hoteleclipsec.entity.Hospedagem;
+import hoteleclipsec.util.Util;
 
 
 
@@ -20,18 +18,22 @@ public class HospedagemMb {
 	
 	private Hospedagem hospedagem;
 	private HospedagemDao dao;
+	private EntityManager entityManager;
 	private List<Hospedagem> listaHospedagem;
 	
 
 	@PostConstruct
 	public void init(){
-		hospedagem = new Hospedagem();
-		dao = new HospedagemDao();	
+		setHospedagem(new Hospedagem());
+		dao = new HospedagemDao(entityManager);
+		entityManager = Util.getEntityManager();
 	}
 	
 	public List<Hospedagem> getListaHospedagem() {
 		if (listaHospedagem == null) {
-			listaHospedagem = dao.listar();
+			Query query = entityManager.createQuery(
+					"SELECT h FROM Hospedagem h", Hospedagem.class);
+			listaHospedagem = query.getResultList();
 		}
 		return listaHospedagem;
 	}
@@ -48,19 +50,22 @@ public class HospedagemMb {
 		this.hospedagem = hospedagem;
 	}
 
+	
+
 
 	public String salvar() {
-		dao.salvar(hospedagem);
+		entityManager.merge(getHospedagem());
 		return "listagemHospedagem";
 	}
-	public String editar(Long id){
-	 hospedagem = dao.buscarPorId(id);
+
+	public String editar(Long ID){
+		Hospedagem hospedagem = entityManager.find(Hospedagem.class, ID);
 		return "formcadhospedagem";
 	}
 	
-	public String excluir(Long id){
-		hospedagem  = dao.buscarPorId(id);
-		hospedagem = dao.excluir(id);
+	public String excluir(Long ID){
+		Hospedagem hospedagem = entityManager.getReference(Hospedagem.class, ID);
+		entityManager.remove(hospedagem);
 		listaHospedagem = null;
 		return "listagemHospedagem";
 	}
